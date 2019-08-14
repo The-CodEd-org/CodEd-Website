@@ -73,7 +73,7 @@
 	<main role="main" class="container">
 	  <div class="row">
 	    <div style="margin-top:60px;max-width:800px;margin-left:auto;margin-right:auto" class="body-content col-md-12">
-	    	<!-- Show flashed messages -->
+	    	<!-- Show Flashed Messages -->
 	    	{% with messages = get_flashed_messages(with_categories=true) %}
 	    		{% if messages %}
 	    			{% for category, message in messages %}
@@ -83,7 +83,7 @@
 	    			{% endfor %}
 	    		{% endif %}
 	    	{% endwith %}
-	    	<!-- Main Content -->
+	    	<!-- Show Main Content -->
 			{% block content %}{% endblock %}
 	    </div>
 	  </div>
