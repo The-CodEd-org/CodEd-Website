@@ -1,9 +1,9 @@
 import os
-import secrets
-from PIL import Image
-from collections import OrderedDict 
+#import secrets
+#from PIL import Image
+#from collections import OrderedDict 
 from flask import render_template, url_for, flash, redirect, request, abort
-from coded import app, db, bcrypt
+from coded import app
 
 courses = {
 	'iOS-Dev': {
