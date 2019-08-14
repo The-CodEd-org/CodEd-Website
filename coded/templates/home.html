@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div style="text-align:center;font-family:URW Chancery L">
+		<h1 style="margin:0;">Welcome to CodEd</h1>
+		<p style="margin-top:0;">a place where anybody can learn to code.</p>
+	</div>
+	<div style="position:relative;max-width:100%;height:0;padding-bottom:56.25%;">
+		<iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/VgJ6TE1mIXQ?autoplay=1&modestbranding=1&color=white" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+	</div>
+	<div class="row mt-4 row-centered">
+		<div class="col-md-4">
+			<div class="p-1" style="border-style:solid;border-color:white;border-radius:12px;height:100%;background-color:#ffde96;">
+				<h3>Our Mission</h3>
+				<p>When we built this business, we had one goal in mind: To create a place where anyone can learn to code quickly and easily.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="p-1" style="border-style:solid;border-color:white;border-radius:12px;height:100%;background-color:#ffecc2;">
+				<h3>Our Vision</h3>
+				<p>We aim to ignite a passion within new coders for developing tangible coding skills by creating things they are proud of.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<!-- below 992px add border -->
+			<div class="p-1" style="border-style:solid;border-color:white;border-radius:12px;height:100%;background-color:#ffde96;">
+				<h3>Our Values</h3>
+				<p>We value passion, creativity, and inspiration - all of which are traits our instructors strive to foster in their students.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Meet The Team CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='meet_the_team.css') }}">
+
+    <!-- Meet The Team Section -->
+	<div class="row row-centered">
+		<div class="col-12 mt-4">
+			<h3>Meet The Team</h3>
+		</div>
+	</div>
+	<div class="row row-centered">
+		<div class="row mx-auto">
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member" id="tl" onmouseover="on_tl(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'tl-tl-bw.jpeg') }}">
+					<span class="media-desc">Jared Miller</span>
+					<span class="_tooltiptext">Jared Miller<br>Founder<br>University of Michigan '22</span>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member"  id="tm" onmouseover="on_tm(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'tm-tm-bw.jpeg') }}">
+					<span class="media-desc">Nick Anderson</span>
+					<span class="_tooltiptext">Nick Anderson<br>Marketing<br>Villanova University '22</span>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member" id="tr" onmouseover="on_tr(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'tr-tr-bw.jpeg') }}">
+					<span class="media-desc">Jared Glassband</span>
+					<span class="_tooltiptext">Jared Glassband<br>Marketing<br>Cornell University '22</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row row-centered">
+		<div class="row mx-auto">
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member" id="bl" onmouseover="on_bl(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'bl-bl-bw.jpeg') }}">
+					<span class="media-desc">Chinmay Savanur</span>
+					<span class="_tooltiptext">Chinmay Savanur<br>Instructor<br>University of Michigan '23</span>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member" id="bm" onmouseover="on_bm(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'bm-bm-bw.jpeg') }}">
+					<span class="media-desc">Sara Whitlock</span>
+					<span class="_tooltiptext">Sara Whitlock<br>Instructor<br>University of Massachusetts '22</span>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="box _tooltip">
+					<img class="rounded-circle team-member" id="br" onmouseover="on_br(this)" onmouseout="off_all()" src="{{ url_for('static', filename='team_pics/' + 'br-br-bw.jpeg') }}">
+					<span class="media-desc">Sanaan Akhter</span>
+					<span class="_tooltiptext">Sanaan Akhter<br>Instructor<br>Rutgers University '22</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Meet <Teammember> -->
+	<!--div class="row blurb">
+	    <div class="col-2">
+			<img class="rounded-circle instructor" 
+           src="{{ url_for('static', filename='instructor_pics/' + 'Jared Miller' + '.jpeg') }}">
+		</div>
+		<div class="col-10">
+			<h3>Meet Jared</h3>
+			<p>{{ teammembers['Jared Miller'] }}</p>
+		</div>
+	</div>
+	<div class="row blurb teammember" id="Anderson">
+	    <div class="col-2">
+			<img class="rounded-circle instructor" 
+           src="{{ url_for('static', filename='instructor_pics/' + 'Nick Anderson' + '.jpeg') }}">
+		</div>
+		<div class="col-10">
+			<h3>Meet Nick</h3>
+			<p>{{ teammembers['Nick Anderson'] }}</p>
+		</div>
+	</div>
+	<div class="row blurb teammember" id="Savanur">
+	    <div class="col-2">
+			<img class="rounded-circle instructor" 
+           src="{{ url_for('static', filename='instructor_pics/' + 'Chinmay Savanur' + '.jpeg') }}">
+		</div>
+		<div class="col-10">
+			<h3>Meet Chinmay</h3>
+			<p>{{ teammembers['Chinmay Savanur'] }}</p>
+		</div>
+	</div>
+	<div class="row blurb teammember" id="Glassband">
+	    <div class="col-2">
+			<img class="rounded-circle instructor" 
+           src="{{ url_for('static', filename='instructor_pics/' + 'Jared Glassband' + '.jpeg') }}">
+		</div>
+		<div class="col-10">
+			<h3>Meet Jared</h3>
+			<p>{{ teammembers['Jared Glassband'] }}</p>
+		</div>
+	</div-->
+
+	<script type="text/javascript">
+	    function on_tl(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'tl-tl-c.jpeg') }}";
+	        document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-tl.jpeg') }}";
+	        document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-t_.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-tl.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-tl.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-tl.jpeg') }}";	        
+	    }
+
+	    function on_tm(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'tm-tm-c.jpeg') }}";
+	        document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-t_.jpeg') }}";
+	        document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-t_.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-tm.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-tm.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-tm.jpeg') }}";
+	    }
+
+	    function on_tr(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'tr-tr-c.jpeg') }}";
+	        document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-t_.jpeg') }}";
+	        document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-tr.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-tr.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-tr.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-tr.jpeg') }}";
+	    }
+
+	    function on_bl(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'bl-bl-c.jpeg') }}";
+	        document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-bl.jpeg') }}";
+	        document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-bl.jpeg') }}";
+	        document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-bl.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-bl.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-b_.jpeg') }}";
+	    }
+
+	    function on_bm(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'bm-bm-c.jpeg') }}";
+	        document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-bm.jpeg') }}";
+	        document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-bm.jpeg') }}";
+	        document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-bm.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-b_.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-b_.jpeg') }}";
+	    }
+
+	    function on_br(x) {
+	        x.src="{{ url_for('static', filename='team_pics/' + 'br-br-c.jpeg') }}";
+	        document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-br.jpeg') }}";
+	        document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-br.jpeg') }}";
+	        document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-br.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-b_.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-br.jpeg') }}";
+	    }
+
+	    function off_all() {
+	    	document.getElementById('tl').src="{{ url_for('static', filename='team_pics/' + 'tl-tl-bw.jpeg') }}";
+	    	document.getElementById('tm').src="{{ url_for('static', filename='team_pics/' + 'tm-tm-bw.jpeg') }}";
+	    	document.getElementById('tr').src="{{ url_for('static', filename='team_pics/' + 'tr-tr-bw.jpeg') }}";
+	        document.getElementById('bl').src="{{ url_for('static', filename='team_pics/' + 'bl-bl-bw.jpeg') }}";
+	        document.getElementById('bm').src="{{ url_for('static', filename='team_pics/' + 'bm-bm-bw.jpeg') }}";
+	        document.getElementById('br').src="{{ url_for('static', filename='team_pics/' + 'br-br-bw.jpeg') }}";
+	        document.getElementsByClassName("blurb").style.display = 'none';
+	    }
+
+	</script>
+{% endblock %}
